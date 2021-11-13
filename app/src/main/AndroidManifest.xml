@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rommansabbir.androidcleanarchmvvmdi">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
         android:name=".base.di.application.MyApplication"
         android:allowBackup="true"
