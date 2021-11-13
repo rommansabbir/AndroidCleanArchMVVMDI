@@ -44,18 +44,10 @@ abstract class BaseFragment<V : ViewDataBinding> : Fragment() {
     }
 
 
-    fun handleFailure(failure: Failure) {
+    protected open fun handleFailure(failure: Failure) {
         this.activity?.let {
             if (it is BaseActivity<*>) {
                 it.handleFailure(failure)
-            }
-        }
-    }
-
-    fun asAuthActivity(onActivity: (activity: AuthActivity) -> Unit) {
-        this.activity?.let {
-            if (it is AuthActivity) {
-                onActivity.invoke(it)
             }
         }
     }

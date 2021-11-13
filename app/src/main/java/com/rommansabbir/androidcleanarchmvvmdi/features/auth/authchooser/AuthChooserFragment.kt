@@ -3,12 +3,12 @@ package com.rommansabbir.androidcleanarchmvvmdi.features.auth.authchooser
 import android.os.Bundle
 import androidx.fragment.app.viewModels
 import com.rommansabbir.androidcleanarchmvvmdi.R
-import com.rommansabbir.androidcleanarchmvvmdi.base.platforms.BaseFragment
+import com.rommansabbir.androidcleanarchmvvmdi.base.platforms.BaseAuthFragment
 import com.rommansabbir.androidcleanarchmvvmdi.databinding.AuthChooserFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class AuthChooserFragment : BaseFragment<AuthChooserFragmentBinding>() {
+class AuthChooserFragment : BaseAuthFragment<AuthChooserFragmentBinding>() {
     private val vm: AuthChooserViewModel by viewModels()
 
     private val actionsListener = object : AuthChooserActions {
