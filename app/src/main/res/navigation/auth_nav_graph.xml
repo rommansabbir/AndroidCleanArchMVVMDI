@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_nav_graph"
+    app:startDestination="@id/authChooserFragment">
+
+    <fragment
+        android:id="@+id/authChooserFragment"
+        android:name="com.rommansabbir.androidcleanarchmvvmdi.features.auth.authchooser.AuthChooserFragment"
+        android:label="auth_chooser_fragment"
+        tools:layout="@layout/auth_chooser_fragment" >
+        <action
+            android:id="@+id/action_authChooserFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_authChooserFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.rommansabbir.androidcleanarchmvvmdi.features.auth.login.LoginFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.rommansabbir.androidcleanarchmvvmdi.features.auth.register.RegisterFragment"
+        android:label="register_fragment"
+        tools:layout="@layout/register_fragment" />
+</navigation>

@@ -3,6 +3,7 @@
     package="com.rommansabbir.androidcleanarchmvvmdi">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:name=".base.di.application.MyApplication"
         android:allowBackup="true"
@@ -11,6 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidCleanArchMVVMDI">
+        <activity
+            android:name=".features.auth.AuthActivity"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
