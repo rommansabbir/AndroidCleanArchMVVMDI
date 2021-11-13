@@ -15,24 +15,23 @@ import javax.inject.Inject
 
 abstract class BaseActivity<V : ViewDataBinding> : AppCompatActivity() {
     private var _binding: V? = null
-    
+
     internal val binding: V
         get() = _binding!!
 
     internal lateinit var navController: NavController
 
+    @Inject
+    lateinit var failureHandler: FailureHandler
+
     @get:LayoutRes
     protected abstract val layoutRes: Int
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = DataBindingUtil.setContentView(this, layoutRes)
         onCreated(savedInstanceState)
     }
-
-    @Inject
-    lateinit var failureHandler: FailureHandler
 
     fun handleFailure(failure: Failure) {
         failureHandler.handleFailure(failure)

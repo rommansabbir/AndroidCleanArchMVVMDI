@@ -1,11 +1,18 @@
 package com.rommansabbir.androidcleanarchmvvmdi
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.rommansabbir.androidcleanarchmvvmdi.base.platforms.BaseActivity
+import com.rommansabbir.androidcleanarchmvvmdi.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+@AndroidEntryPoint
+class MainActivity : BaseActivity<ActivityMainBinding>() {
+
+    override val layoutRes: Int
+        get() = R.layout.activity_main
+
+    override fun onCreated(instance: Bundle?) {
+
     }
+
 }
