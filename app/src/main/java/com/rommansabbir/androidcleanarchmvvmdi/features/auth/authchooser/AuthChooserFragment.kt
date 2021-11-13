@@ -1,32 +1,34 @@
 package com.rommansabbir.androidcleanarchmvvmdi.features.auth.authchooser
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.rommansabbir.androidcleanarchmvvmdi.R
+import com.rommansabbir.androidcleanarchmvvmdi.base.platforms.BaseFragment
+import com.rommansabbir.androidcleanarchmvvmdi.databinding.AuthChooserFragmentBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-class AuthChooserFragment : Fragment() {
+@AndroidEntryPoint
+class AuthChooserFragment : BaseFragment<AuthChooserFragmentBinding>() {
+    private val vm: AuthChooserViewModel by viewModels()
 
-    companion object {
-        fun newInstance() = AuthChooserFragment()
+    private val actionsListener = object : AuthChooserActions {
+        override fun onLoginAction() {
+            this@AuthChooserFragment.asAuthActivity {
+                it.authNavigator.navigateToLogin()
+            }
+        }
+
+        override fun onRegisterAction() {
+            this@AuthChooserFragment.asAuthActivity {
+                it.authNavigator.navigateToRegister()
+            }
+        }
     }
+    override val layoutRes: Int
+        get() = R.layout.auth_chooser_fragment
 
-    private lateinit var viewModel: AuthChooserViewModel
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.auth_chooser_fragment, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(AuthChooserViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onCreated(savedInstance: Bundle?) {
+        binding.actions = actionsListener
     }
 
 }
