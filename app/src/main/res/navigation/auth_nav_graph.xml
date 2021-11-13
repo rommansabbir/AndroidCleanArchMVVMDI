@@ -10,12 +10,6 @@
         android:name="com.rommansabbir.androidcleanarchmvvmdi.features.auth.authchooser.AuthChooserFragment"
         android:label="auth_chooser_fragment"
         tools:layout="@layout/auth_chooser_fragment" >
-        <action
-            android:id="@+id/action_authChooserFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-        <action
-            android:id="@+id/action_authChooserFragment_to_registerFragment"
-            app:destination="@id/registerFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -26,5 +20,6 @@
         android:id="@+id/registerFragment"
         android:name="com.rommansabbir.androidcleanarchmvvmdi.features.auth.register.RegisterFragment"
         android:label="register_fragment"
-        tools:layout="@layout/register_fragment" />
+        tools:layout="@layout/register_fragment" >
+    </fragment>
 </navigation>

@@ -9,11 +9,11 @@ import javax.inject.Inject
 class AuthNavigatorImpl @Inject constructor(@ActivityContext private val context: Context) :
     AuthNavigator {
     override fun navigateToLogin() {
-        (context as BaseActivity<*>).navController.navigate(R.id.action_authChooserFragment_to_loginFragment)
+        (context as BaseActivity<*>).navController.navigate(R.id.loginFragment)
     }
 
     override fun navigateToRegister() {
-        (context as BaseActivity<*>).navController.navigate(R.id.action_authChooserFragment_to_registerFragment)
+        (context as BaseActivity<*>).navController.navigate(R.id.registerFragment)
     }
 
 }
