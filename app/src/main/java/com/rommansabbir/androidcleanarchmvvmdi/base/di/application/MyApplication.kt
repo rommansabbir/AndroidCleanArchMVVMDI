@@ -1,4 +1,4 @@
-package com.rommansabbir.androidcleanarchmvvmdi
+package com.rommansabbir.androidcleanarchmvvmdi.base.di.application
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
