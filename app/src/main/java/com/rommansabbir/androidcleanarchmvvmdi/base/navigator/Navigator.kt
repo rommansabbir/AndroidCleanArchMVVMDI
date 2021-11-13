@@ -1,0 +1,3 @@
+package com.rommansabbir.androidcleanarchmvvmdi.base.navigator
+
+interface Navigator
