@@ -1,32 +1,26 @@
 package com.rommansabbir.androidcleanarchmvvmdi.features.auth.login
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.rommansabbir.androidcleanarchmvvmdi.R
+import com.rommansabbir.androidcleanarchmvvmdi.base.platforms.BaseFragment
+import com.rommansabbir.androidcleanarchmvvmdi.databinding.LoginFragmentBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-class LoginFragment : Fragment() {
+@AndroidEntryPoint
+class LoginFragment : BaseFragment<LoginFragmentBinding>() {
+    private val vm: LoginViewModel by viewModels()
 
-    companion object {
-        fun newInstance() = LoginFragment()
+    private val actions = object : LoginActions {
+        override fun loginUser() {
+            
+        }
     }
+    override val layoutRes: Int
+        get() = R.layout.login_fragment
 
-    private lateinit var viewModel: LoginViewModel
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.login_fragment, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onCreated(savedInstance: Bundle?) {
+        binding.actions = actions
     }
 
 }
