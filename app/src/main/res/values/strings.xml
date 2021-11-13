@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AndroidCleanArchMVVMDI</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="rommansabbir">rommansabbir</string>
+    <string name="password">password</string>
 </resources>

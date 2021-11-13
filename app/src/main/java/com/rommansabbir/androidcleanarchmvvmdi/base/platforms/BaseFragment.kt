@@ -12,6 +12,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import com.rommansabbir.androidcleanarchmvvmdi.base.exception.Failure
+import com.rommansabbir.androidcleanarchmvvmdi.features.auth.AuthActivity
 
 
 abstract class BaseFragment<V : ViewDataBinding> : Fragment() {
@@ -47,6 +48,14 @@ abstract class BaseFragment<V : ViewDataBinding> : Fragment() {
         this.activity?.let {
             if (it is BaseActivity<*>) {
                 it.handleFailure(failure)
+            }
+        }
+    }
+
+    fun asAuthActivity(onActivity: (activity: AuthActivity) -> Unit) {
+        this.activity?.let {
+            if (it is AuthActivity) {
+                onActivity.invoke(it)
             }
         }
     }
