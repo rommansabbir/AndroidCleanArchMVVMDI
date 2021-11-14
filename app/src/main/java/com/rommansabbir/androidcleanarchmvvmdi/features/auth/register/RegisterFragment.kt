@@ -28,9 +28,12 @@ class RegisterFragment : BaseAuthFragment<RegisterFragmentBinding>() {
                     showHideLoading(true)
                     vm.registerNewUser(
                         model,
-                        {
+                        { dataModel ->
                             showHideLoading(false)
-                            this@RegisterFragment.context?.showMessage("New User Registered: ${it.username}")
+                            this@RegisterFragment.context?.showMessage("New User Registered: ${dataModel.username}")
+                            asAuthActivity {
+                                it.homeNavigator.navigateToHome()
+                            }
                         },
                         {
                             showHideLoading(false)
@@ -55,6 +58,7 @@ class RegisterFragment : BaseAuthFragment<RegisterFragmentBinding>() {
 
     override fun onCreated(savedInstance: Bundle?) {
         binding.actions = actions
+        binding.lifecycleOwner = viewLifecycleOwner
     }
 
     /**
@@ -71,7 +75,7 @@ class RegisterFragment : BaseAuthFragment<RegisterFragmentBinding>() {
                 this.password = binding.rfInputPassword.text.toString()
             }
             if (userModel.fullName.isEmpty() || userModel.username.isEmpty() || userModel.password.isEmpty()) {
-                return Either.Left(AuthFailure.InvalidUserRegisterModel())
+                return Either.Left(AuthFailure.InvalidUserRegister())
             }
             return Either.Right(userModel)
         } catch (e: Exception) {
