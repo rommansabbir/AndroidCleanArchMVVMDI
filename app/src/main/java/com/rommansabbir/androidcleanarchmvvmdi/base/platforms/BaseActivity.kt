@@ -49,10 +49,16 @@ abstract class BaseActivity<V : ViewDataBinding> : AppCompatActivity() {
     }
 
     fun showHideLoading(show: Boolean, isCancelable: Boolean = false) {
-        if (show) {
-            loadingScreen.hide()
-            loadingScreen.show(isCancelable)
-        } else {
+        try {
+            if (show) {
+                loadingScreen.hide()
+                loadingScreen.show(isCancelable)
+            } else {
+                loadingScreen.hide()
+            }
+        }
+        catch (e : Exception){
+            e.printStackTrace()
             loadingScreen.hide()
         }
     }
