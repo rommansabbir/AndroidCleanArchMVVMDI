@@ -25,12 +25,15 @@ class RegisterFragment : BaseAuthFragment<RegisterFragmentBinding>() {
                     this@RegisterFragment.handleFailure(it)
                 },
                 { model ->
+                    showHideLoading(true)
                     vm.registerNewUser(
                         model,
                         {
+                            showHideLoading(false)
                             this@RegisterFragment.context?.showMessage("New User Registered: ${it.username}")
                         },
                         {
+                            showHideLoading(false)
                             this@RegisterFragment.handleFailure(it)
                         }
                     )
