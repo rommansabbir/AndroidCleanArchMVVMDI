@@ -1,4 +1,4 @@
-package com.rommansabbir.androidcleanarchmvvmdi.data
+package com.rommansabbir.androidcleanarchmvvmdi.data.remote.auth.models
 
 class UserDataModel {
     var username: String = ""
