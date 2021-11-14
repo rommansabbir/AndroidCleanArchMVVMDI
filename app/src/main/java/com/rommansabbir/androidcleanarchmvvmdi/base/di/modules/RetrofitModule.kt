@@ -19,12 +19,16 @@ import javax.inject.Named
 @InstallIn(SingletonComponent::class)
 object RetrofitModule {
     object TAGs {
+        /*
+        Tags are to identify which retrofit instance should provide to it's clients since we
+        will use multiple retrofit instance for this project
+         */
         const val AUTH_RETROFIT = "AuthRetrofit"
         const val WEATHER_RETROFIT = "WeatherRetrofit"
     }
 
-    private const val AUTH_BASE_URL = "api.localhost.com/auth"
-    private const val WEATHER_BASE_URL = "api.openweathermap.org/"
+    private const val AUTH_BASE_URL = "https://api.localhost.com/auth/"
+    private const val WEATHER_BASE_URL = "https://api.openweathermap.org/"
 
     @Provides
     @Named(AUTH_RETROFIT) //Important step
