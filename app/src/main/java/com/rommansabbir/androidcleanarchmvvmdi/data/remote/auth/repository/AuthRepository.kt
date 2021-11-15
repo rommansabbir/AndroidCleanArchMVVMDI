@@ -9,4 +9,5 @@ import com.rommansabbir.androidcleanarchmvvmdi.data.remote.auth.models.UserRegis
 interface AuthRepository {
     suspend fun loginUser(request: UserLoginRequestModel): Either<Failure, UserDataModel>
     suspend fun registerUser(request: UserRegisterRequestModel): Either<Failure, UserDataModel>
+    suspend fun isAuthenticated(): Either<Failure, UserDataModel>
 }
