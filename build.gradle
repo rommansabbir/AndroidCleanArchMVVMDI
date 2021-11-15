@@ -13,6 +13,7 @@ buildscript {
     ext.networkx_version= "3.3.0"
     ext.retrofit_version= "2.9.0"
     ext.okhttp_version= "4.9.1"
+    ext.storex_version= "1.0.0"
     repositories {
         google()
         mavenCentral()

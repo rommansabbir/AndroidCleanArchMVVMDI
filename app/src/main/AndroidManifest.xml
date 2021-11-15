@@ -3,6 +3,7 @@
     package="com.rommansabbir.androidcleanarchmvvmdi">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:name=".base.di.application.MyApplication"
         android:allowBackup="true"
@@ -12,13 +13,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidCleanArchMVVMDI">
         <activity
-            android:name=".MainActivity"
+            android:name=".features.home.HomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".features.auth.AuthActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+        <activity
+            android:name=".features.MainActivity"
+            android:exported="true">
+
+             <intent-filter>
+             <action android:name="android.intent.action.MAIN" />
+
+
+             <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
         </activity>
     </application>
 
