@@ -8,4 +8,5 @@ sealed class AuthFailure : AppFailure() {
     class RegisterFailure(val message: String = "Failed to register as a new user") : AuthFailure()
     class InvalidUserRegister(val message: String = "Invalid user register data model") : AuthFailure()
     class InvalidUserLogin(val message: String = "Invalid user login model") : AuthFailure()
+    class NoAuthenticatedUserFound(val message: String = "No authenticated user found") : AuthFailure()
 }

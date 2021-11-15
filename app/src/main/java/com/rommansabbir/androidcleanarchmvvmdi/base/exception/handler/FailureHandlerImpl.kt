@@ -20,6 +20,7 @@ class FailureHandlerImpl @Inject constructor(@ActivityContext private val contex
                 is AuthFailure.RegisterFailure -> context.showMessage(failure.message)
                 is AuthFailure.InvalidUserRegister -> context.showMessage(failure.message)
                 is AuthFailure.InvalidUserLogin -> context.showMessage(failure.message)
+                is AuthFailure.NoAuthenticatedUserFound -> context.showMessage(failure.message)
                 is Failure.UnauthorizedAccess -> context.showMessage(failure.message)
                 is AuthFailure.LoginFailure -> context.showMessage(failure.message)
                 is AppFailure.GenericError -> context.showMessage(failure.message)
