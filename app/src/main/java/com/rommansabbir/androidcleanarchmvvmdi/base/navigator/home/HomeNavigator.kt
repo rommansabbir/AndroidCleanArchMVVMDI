@@ -1,7 +1,9 @@
 package com.rommansabbir.androidcleanarchmvvmdi.base.navigator.home
 
-import android.app.Activity
+import android.content.Context
+import com.rommansabbir.androidcleanarchmvvmdi.base.navigator.Navigator
+import dagger.hilt.android.qualifiers.ActivityContext
 
-interface HomeNavigator {
-    fun navigateToHome()
+interface HomeNavigator : Navigator {
+    fun navigateToHome(@ActivityContext context: Context)
 }

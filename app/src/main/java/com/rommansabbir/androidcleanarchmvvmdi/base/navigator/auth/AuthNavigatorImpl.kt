@@ -6,14 +6,22 @@ import com.rommansabbir.androidcleanarchmvvmdi.base.platforms.BaseActivity
 import dagger.hilt.android.qualifiers.ActivityContext
 import javax.inject.Inject
 
-class AuthNavigatorImpl @Inject constructor(@ActivityContext private val context: Context) :
+class AuthNavigatorImpl @Inject constructor() :
     AuthNavigator {
-    override fun navigateToLogin() {
-        (context as BaseActivity<*>).navController.navigate(R.id.loginFragment)
+    override fun navigateToLogin(@ActivityContext context: Context) {
+        try {
+            (context as BaseActivity<*>).navController.navigate(R.id.loginFragment)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
-    override fun navigateToRegister() {
-        (context as BaseActivity<*>).navController.navigate(R.id.registerFragment)
+    override fun navigateToRegister(@ActivityContext context: Context) {
+        try {
+            (context as BaseActivity<*>).navController.navigate(R.id.registerFragment)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
 }

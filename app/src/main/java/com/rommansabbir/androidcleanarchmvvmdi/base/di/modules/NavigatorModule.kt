@@ -1,6 +1,5 @@
 package com.rommansabbir.androidcleanarchmvvmdi.base.di.modules
 
-import android.content.Context
 import com.rommansabbir.androidcleanarchmvvmdi.base.navigator.auth.AuthNavigator
 import com.rommansabbir.androidcleanarchmvvmdi.base.navigator.auth.AuthNavigatorImpl
 import com.rommansabbir.androidcleanarchmvvmdi.base.navigator.home.HomeNavigator
@@ -8,17 +7,16 @@ import com.rommansabbir.androidcleanarchmvvmdi.base.navigator.home.HomeNavigator
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityComponent
-import dagger.hilt.android.qualifiers.ActivityContext
+import dagger.hilt.android.components.ViewModelComponent
 
 @Module
-@InstallIn(ActivityComponent::class)
+@InstallIn(ViewModelComponent::class)
 object NavigatorModule {
     @Provides
-    fun provideAuthNavigator(@ActivityContext context: Context): AuthNavigator =
-        AuthNavigatorImpl(context)
+    fun provideAuthNavigator(): AuthNavigator =
+        AuthNavigatorImpl()
 
     @Provides
-    fun provideHomeNavigator(@ActivityContext context: Context): HomeNavigator =
-        HomeNavigatorImpl(context)
+    fun provideHomeNavigator(): HomeNavigator =
+        HomeNavigatorImpl()
 }

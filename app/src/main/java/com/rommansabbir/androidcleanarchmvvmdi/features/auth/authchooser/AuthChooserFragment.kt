@@ -14,13 +14,13 @@ class AuthChooserFragment : BaseAuthFragment<AuthChooserFragmentBinding>() {
     private val actionsListener = object : AuthChooserActions {
         override fun onLoginAction() {
             this@AuthChooserFragment.asAuthActivity {
-                it.authNavigator.navigateToLogin()
+                it.vm.authNavigator.navigateToLogin(it)
             }
         }
 
         override fun onRegisterAction() {
             this@AuthChooserFragment.asAuthActivity {
-                it.authNavigator.navigateToRegister()
+                it.vm.authNavigator.navigateToRegister(it)
             }
         }
     }

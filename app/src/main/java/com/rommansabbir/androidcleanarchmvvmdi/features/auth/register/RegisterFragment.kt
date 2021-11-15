@@ -32,7 +32,7 @@ class RegisterFragment : BaseAuthFragment<RegisterFragmentBinding>() {
                             showHideLoading(false)
                             this@RegisterFragment.context?.showMessage("New User Registered: ${dataModel.username}")
                             asAuthActivity {
-                                it.homeNavigator.navigateToHome()
+                                it.vm.homeNavigator.navigateToHome(it)
                             }
                         },
                         {
@@ -46,7 +46,7 @@ class RegisterFragment : BaseAuthFragment<RegisterFragmentBinding>() {
 
         override fun onLogin() {
             asAuthActivity {
-                it.authNavigator.navigateToLogin()
+                it.vm.authNavigator.navigateToLogin(it)
             }
         }
 
