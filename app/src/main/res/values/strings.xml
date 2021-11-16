@@ -6,4 +6,6 @@
     <string name="password">password</string>
     <string name="romman_sabbir">Romman Sabbir</string>
     <string name="_3_seconds_delay">3 Seconds Delay</string>
+
+    <string name="weather_api_key">eaca152b31fd667c8b9fb8da3e74848a</string>
 </resources>
