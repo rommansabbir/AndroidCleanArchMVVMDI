@@ -1,6 +1,8 @@
 package com.rommansabbir.androidcleanarchmvvmdi.base.di.modules
 
 import com.rommansabbir.androidcleanarchmvvmdi.base.service.ApiClient
+import com.rommansabbir.androidcleanarchmvvmdi.base.utils.WeatherDataMapper
+import com.rommansabbir.androidcleanarchmvvmdi.base.utils.WeatherDataMapperImpl
 import com.rommansabbir.androidcleanarchmvvmdi.data.remote.auth.api.AuthAPIService
 import com.rommansabbir.androidcleanarchmvvmdi.data.remote.auth.repository.AuthRepository
 import com.rommansabbir.androidcleanarchmvvmdi.data.remote.auth.repository.AuthRepositoryImpl
@@ -25,4 +27,8 @@ object RepositoryModule {
         service: WeatherAPIService
     ): WeatherRepository =
         WeatherRepositoryImpl(apiClient, service)
+
+
+    @Provides
+    fun provideWeatherDataMapper(): WeatherDataMapper = WeatherDataMapperImpl()
 }
