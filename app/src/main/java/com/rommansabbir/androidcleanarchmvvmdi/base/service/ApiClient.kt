@@ -6,6 +6,10 @@ import com.rommansabbir.androidcleanarchmvvmdi.base.functional.Either
 import retrofit2.Call
 import javax.inject.Inject
 
+/**
+ * API Client is responsible for making all HTTP request through [Retrofit].
+ * Manage core level [Failure] here
+ */
 class ApiClient @Inject constructor() {
     fun <T, R> request(
         call: Call<T>,
