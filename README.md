@@ -1,4 +1,4 @@
-# Android Clean Architecture Kick Start project with MVVM, Coroutine, DI, Caching, Netwokring
+# Android Clean Architecture Kick Start project with MVVM, Coroutine, DI, Caching, Networking
 
 
 Stacks:
