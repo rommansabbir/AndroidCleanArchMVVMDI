@@ -1,0 +1,1 @@
+Data layer for this application. Data Models/POJO, API, Repository, Local DB, Caching should be take place in this layer.

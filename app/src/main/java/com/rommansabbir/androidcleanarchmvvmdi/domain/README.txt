@@ -1,0 +1,1 @@
+Domain layer is the interacts between the Framework and Data Layer. Domain layer expose UseCase for a specific logic by following Single Responsibility.
