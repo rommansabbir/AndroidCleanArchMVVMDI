@@ -34,6 +34,7 @@ class LoadingScreen @Inject constructor(@ActivityContext private val context: Co
             binding.executePendingBindings()
             dialog.show()
         } catch (e: Exception) {
+            e.printStackTrace()
         }
     }
 
@@ -41,6 +42,7 @@ class LoadingScreen @Inject constructor(@ActivityContext private val context: Co
         try {
             dialog.cancel()
         } catch (e: Exception) {
+            e.printStackTrace()
         }
     }
 }
